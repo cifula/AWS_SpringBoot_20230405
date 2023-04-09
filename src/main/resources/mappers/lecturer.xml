@@ -3,10 +3,10 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-<mapper namespace="com.web.study.repository.LectureRepository">
+<mapper namespace="com.web.study.repository.LecturerRepository">
 
-	<insert id="registe" parameterType="com.web.study.domain.entity.Lecture">
-	  insert into lecture_mst
-	  values (0, #{lecture_name}, #{lecture_price}, #{lecturer_id})
+	<insert id="registe" parameterType="com.web.study.domain.entity.Lecturer">
+	  insert into lecturer_mst
+	  values (0, #{lecturer_name}, #{birth_date})
 	</insert>	
 </mapper>
