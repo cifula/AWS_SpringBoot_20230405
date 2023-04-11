@@ -5,8 +5,30 @@
   
 <mapper namespace="com.web.study.repository.LectureRepository">
 
-	<insert id="registe" parameterType="com.web.study.domain.entity.Lecture">
+	<insert id="saveLecture" parameterType="Lecture">
 	  insert into lecture_mst
-	  values (0, #{lecture_name}, #{lecture_price}, #{lecturer_id})
-	</insert>	
+	  values (0, #{lecture_name}, #{lecture_price}, #{instructor_id})
+	</insert>
+	
+	<select id="getLectureAll" resultType="Lecture">
+	  select
+	    ltm_id,
+	    ltm_name,
+	    ltm_price,
+	    itm_id
+	  from
+	    lecture_mst
+	</select>
+	
+	<select id="findLectureById" parameterType="Integer" resultType="Lecture">
+	  select
+	    ltm_id,
+	    ltm_name,
+	    ltm_price,
+	    itm_id
+	  from
+	    lecture_mst
+	  where
+	    id = #{id}
+	</select>
 </mapper>

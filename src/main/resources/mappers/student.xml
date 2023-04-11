@@ -5,8 +5,28 @@
   
 <mapper namespace="com.web.study.repository.StudentRepository">
 
-	<insert id="registe" parameterType="com.web.study.domain.entity.Student">
+	<insert id="saveStudent" parameterType="Student">
 	  insert into student_mst
 	  values (0, #{student_name}, #{birth_date})
-	</insert>	
+	</insert>
+	
+	<select id="getStudentAll" resultType="Student">
+	  select
+	    sdm_id,
+	    sdm_name,
+	    sdm_birth
+	  from
+	    student_mst
+	</select>
+	
+	<select id="findStudentById" parameterType="Integer" resultType="Student">
+	  select
+	    sdm_id,
+	    sdm_name,
+	    sdm_birth
+	  from
+	    student_mst
+	  where
+	    id = #{id}
+	</select>
 </mapper>

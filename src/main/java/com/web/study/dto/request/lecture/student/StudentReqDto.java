@@ -1,4 +1,4 @@
-package com.web.study.dto.request.lecture;
+package com.web.study.dto.request.lecture.student;
 
 import java.time.LocalDate;
 
@@ -15,8 +15,8 @@ public class StudentReqDto {
 	
 	public Student toEntity() {
 		return Student.builder()
-				.student_name(studentName)
-				.birth_date(birthDate)
+				.sdm_name(studentName)
+				.sdm_birth(birthDate)
 				.build();
 	}
 }
