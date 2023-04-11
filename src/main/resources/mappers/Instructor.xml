@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
@@ -6,10 +6,10 @@
 <mapper namespace="com.web.study.repository.InstructorRepository">
 
 	<insert id="saveInstructor" parameterType="Instructor">
-	  insert into instructor_mst
-	  values (0, #{instructor_name}, #{birth_date})
+		insert into instructor_mst
+		values (0, #{itm_name}, #{itm_birth})
 	</insert>
-	
+
 	<select id="getInstructorAll" resultType="Instructor">
 		select
 			itm_id,
@@ -27,6 +27,10 @@
 		from
 			instructor_mst
 		where
-			id = #{id}
+			itm_id = #{id}
 	</select>
+
 </mapper>
+
+
+

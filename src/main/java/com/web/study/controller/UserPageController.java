@@ -20,5 +20,4 @@ public class UserPageController {
 	public String getUsers() {
 		return "UserList";
 	}
-
 }

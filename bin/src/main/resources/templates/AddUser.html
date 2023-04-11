@@ -25,7 +25,7 @@
 			window.onload = () => {
 				addSendButtonEvent();
 			}
-		
+			console.log("test")
 			function addSendButtonEvent() {
 				const sendButton = document.querySelector(".send-button");
 				sendButton.onclick = () => {
@@ -47,11 +47,11 @@
 				}
 				
 				const request = {
-						type: "post", //method
+						type: "post",	//method
 						url: "http://localhost:8080/api/user/addition",
-						contentType: "application/json", //요청 데이터 타입
-						data: JSON.stringify(userObj), //요청 데이터
-						dataType: "json", //응답 데이터 타입
+						contentType: "application/json",	//요청 데이터 타입
+						data: JSON.stringify(userObj),	//요청 데이터
+						dataType: "json",	//응답 데이터 타입
 						//응답 성공시에 실행될 메소드 정의
 						success: (response) => {
 							console.log(response);
@@ -63,9 +63,23 @@
 				}
 				
 				$.ajax(request);
-
 			}
 		</script>
 		
 	</body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

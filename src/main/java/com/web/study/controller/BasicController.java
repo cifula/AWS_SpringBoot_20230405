@@ -5,15 +5,12 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.web.study.dto.DataResponseDto;
 import com.web.study.dto.ErrorResponseDto;
 import com.web.study.dto.ResponseDto;
-
 
 @RestController
 public class BasicController {
@@ -21,7 +18,7 @@ public class BasicController {
 	@GetMapping("/view/test")
 	public ResponseEntity<? extends ResponseDto> view() {
 		
-		List<String> strList= new ArrayList<>();
+		List<String> strList = new ArrayList<>();
 		strList.add("a");
 		strList.add("b");
 		strList.add("c");
@@ -30,14 +27,22 @@ public class BasicController {
 		
 		if(strList.contains("e")) {
 			try {
-				throw new RuntimeException("오류남!");
+				throw new RuntimeException("오류났어!!!!");
 			} catch (Exception e) {
-				return ResponseEntity.badRequest().body(ErrorResponseDto.of(HttpStatus.BAD_REQUEST, e));
+				return ResponseEntity.internalServerError().body(ErrorResponseDto.of(HttpStatus.INTERNAL_SERVER_ERROR, e));
 			}
-			
 		}
 		
-		return ResponseEntity.ok().body(DataResponseDto.of(strList));
+		
+		return ResponseEntity.ok().body(DataResponseDto.of(strList)); 
 	}
-
+	
+	
 }
+
+
+
+
+
+
+

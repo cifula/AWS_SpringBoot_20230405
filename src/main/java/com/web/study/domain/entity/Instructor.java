@@ -2,12 +2,16 @@ package com.web.study.domain.entity;
 
 import java.time.LocalDate;
 
-import com.web.study.dto.response.lecture.instructor.InstructorRespDto;
+import com.web.study.dto.response.InstructorRespDto;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Getter
 public class Instructor {
 	private int itm_id;
@@ -17,8 +21,15 @@ public class Instructor {
 	public InstructorRespDto toDto() {
 		return InstructorRespDto.builder()
 				.id(itm_id)
-				.instructorName(itm_name)
+				.name(itm_name)
 				.birthDate(itm_birth)
 				.build();
 	}
 }
+
+
+
+
+
+
+

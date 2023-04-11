@@ -9,16 +9,16 @@ public class DataResponseDto<T> extends ResponseDto {
 
 	private final T data;
 	
-	public DataResponseDto(T data) {
+	private DataResponseDto(T data) {
 		super(true, HttpStatus.OK.value(), "Successfully");
 		this.data = data;
 	}
 	
-   private DataResponseDto(T data, String message) {
-	      super(true, HttpStatus.OK.value(), message);
-	      this.data = data;
-	   }
-	
+	private DataResponseDto(T data, String message) {
+		super(true, HttpStatus.OK.value(), message);
+		this.data = data;
+	}
+
 	public static <T> DataResponseDto<T> of(T data) {
 		return new DataResponseDto<T>(data);
 	}
@@ -30,6 +30,15 @@ public class DataResponseDto<T> extends ResponseDto {
 	public static <T> DataResponseDto<T> empty() {
 		return new DataResponseDto<T>(null);
 	}
-
 	
 }
+
+
+
+
+
+
+
+
+
+
